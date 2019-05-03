@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Request : NSObject
+-(void) fetchDataFromJSON:(void (^) (NSData* result))completionHandler ;
 @end
 
 NS_ASSUME_NONNULL_END

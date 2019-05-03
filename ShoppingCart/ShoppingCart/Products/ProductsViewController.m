@@ -7,7 +7,7 @@
 //
 
 #import "ProductsViewController.h"
-
+#import "ProductViewModel.h"
 @interface ProductsViewController ()
 @property  (strong,nonatomic) NSMutableArray<ProductModel *> *products;
 @end
@@ -25,26 +25,44 @@ NSString *cellId = @"cellId";
     product.name = @"Cerveza Andina";
     product.price = @(2000);
     [self.products addObject:product];
+   
+    
+    ProductViewModel *productViewModel = ProductViewModel.new;
+    [productViewModel convertDataToModel:^(NSMutableArray * _Nonnull productList) {
+        self.products = productList;
+        dispatch_async(dispatch_get_main_queue(),^(void){[self.tableView reloadData];});
+    }];
+   
+    
     
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return self.products.count;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 5;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    cell.backgroundColor = UIColor.blueColor;
-    ProductModel *product = self.products[indexPath.row];
-    cell.textLabel.text = product.name;
+    static NSString *productCellIdentifier = @"ProductViewCell";
+    ProductViewCell *cell = [tableView dequeueReusableCellWithIdentifier:productCellIdentifier];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:productCellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.nameLabel.text = self.products[indexPath.section].name;
+     cell.priceLabel.text = [self.products[indexPath.section].price stringValue];
+    
+    
     return cell;
 }
 

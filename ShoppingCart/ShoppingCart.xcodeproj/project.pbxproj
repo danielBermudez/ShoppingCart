@@ -10,6 +10,7 @@
 		AA0ACF202278989500FFB20B /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0ACF1F2278989500FFB20B /* Request.m */; };
 		AA0ACF242278E5A000FFB20B /* ProductViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0ACF222278E5A000FFB20B /* ProductViewCell.m */; };
 		AA0ACF252278E5A000FFB20B /* ProductViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0ACF232278E5A000FFB20B /* ProductViewCell.xib */; };
+		AA249D52227C8002001481C4 /* ProductViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA249D51227C8002001481C4 /* ProductViewModel.m */; };
 		AAA1E411227743340082F1E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA1E410227743340082F1E9 /* AppDelegate.m */; };
 		AAA1E417227743340082F1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA1E415227743340082F1E9 /* Main.storyboard */; };
 		AAA1E419227743360082F1E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA1E418227743360082F1E9 /* Assets.xcassets */; };
@@ -25,6 +26,8 @@
 		AA0ACF212278E5A000FFB20B /* ProductViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductViewCell.h; sourceTree = "<group>"; };
 		AA0ACF222278E5A000FFB20B /* ProductViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductViewCell.m; sourceTree = "<group>"; };
 		AA0ACF232278E5A000FFB20B /* ProductViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewCell.xib; sourceTree = "<group>"; };
+		AA249D50227C8002001481C4 /* ProductViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductViewModel.h; sourceTree = "<group>"; };
+		AA249D51227C8002001481C4 /* ProductViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductViewModel.m; sourceTree = "<group>"; };
 		AAA1E40C227743340082F1E9 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA1E40F227743340082F1E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAA1E410227743340082F1E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 			children = (
 				AAA1E42522774F870082F1E9 /* ProductsViewController.h */,
 				AAA1E42622774F870082F1E9 /* ProductsViewController.m */,
+				AA249D50227C8002001481C4 /* ProductViewModel.h */,
+				AA249D51227C8002001481C4 /* ProductViewModel.m */,
 				AAA1E429227786600082F1E9 /* ProductModel.h */,
 				AAA1E42A227786600082F1E9 /* ProductModel.m */,
 				AA0ACF1E2278989500FFB20B /* Request.h */,
@@ -168,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA249D52227C8002001481C4 /* ProductViewModel.m in Sources */,
 				AAA1E41F227743360082F1E9 /* main.m in Sources */,
 				AA0ACF202278989500FFB20B /* Request.m in Sources */,
 				AAA1E42722774F870082F1E9 /* ProductsViewController.m in Sources */,
@@ -315,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QSBZ9KU2MH;
 				INFOPLIST_FILE = ShoppingCart/Info.plist;
@@ -324,6 +331,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.endava.ios.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -332,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QSBZ9KU2MH;
 				INFOPLIST_FILE = ShoppingCart/Info.plist;
@@ -341,6 +350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.endava.ios.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

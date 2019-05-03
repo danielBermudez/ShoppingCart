@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductModel.h"
+#import "ProductViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
